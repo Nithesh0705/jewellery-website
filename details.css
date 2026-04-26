@@ -1,0 +1,54 @@
+/* 🎨 Product Details Page Styling */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8e7;
+  margin: 0;
+  padding: 0;
+}
+
+.product-details {
+  max-width: 900px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-details img {
+  width: 320px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.product-details h1 {
+  color: #a87b00;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.product-details button {
+  background-color: #d4af37;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-details button:hover {
+  background-color: #b8942c;
+  transform: scale(1.05);
+}

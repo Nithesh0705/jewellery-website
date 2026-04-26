@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details – Krishna Jewellery</title>
+  <link rel="stylesheet" href="R2.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="image-section">
+      <img src="D:\KJ APP\IMAGES\7379_5.images.1000x1000.jpg" alt="Gold Ring Design" />
+    </div>
+
+    <div class="details-section">
+      <h2>Elegant Gold Ring</h2>
+
+      <label for="weight"><strong>Weight (grams):</strong></label>
+      <input type="number" id="weight" value="8x" min="1" />
+
+      <p><strong>Price:</strong> ₹<span id="price">250000</span></p>
+      <p><strong>Discount Price:</strong> ₹<span id="discount">230000</span></p>
+      <p><strong>GST (3%):</strong> ₹<span id="gst">6900</span></p>
+      <p><strong>Total Payable:</strong> ₹<span id="total">236900</span></p>
+
+      <p><strong>Description:</strong> Intricately crafted gold ring with traditional motifs, ideal for weddings and festive occasions. Made with BIS-certified 22K gold.</p>
+
+      <button class="cart-button">Add to Cart</button>
+        <a href="D:\KJ APP\products\cart.html"> <button class="cart-button">Your Carts</button></a>
+    </div>
+  </div>
+
+  <script>
+    const weightInput = document.getElementById('weight');
+    const priceEl = document.getElementById('price');
+    const discountEl = document.getElementById('discount');
+    const gstEl = document.getElementById('gst');
+    const totalEl = document.getElementById('total');
+
+    function updatePrices() {
+      const weight = parseFloat(weightInput.value);
+      const pricePerGram = 11363.63; // ₹250000 ÷ 22g
+      const discountPerGram = 10454.54; // ₹230000 ÷ 22g
+
+      const price = Math.round(pricePerGram * weight);
+      const discount = Math.round(discountPerGram * weight);
+      const gst = Math.round(discount * 0.03);
+      const total = discount + gst;
+
+      priceEl.textContent = price;
+      discountEl.textContent = discount;
+      gstEl.textContent = gst;
+      totalEl.textContent = total;
+    }
+
+    weightInput.addEventListener('input', updatePrices);
+    updatePrices();
+  </script>
+
+</body>
+</html>

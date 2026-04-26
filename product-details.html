@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="details.css">
+</head>
+<body>
+
+<div class="product-details">
+  <img id="product-image" src="" alt="Product">
+  <h1 id="product-title"></h1>
+  <p id="product-description"></p>
+  <button>Buy Now</button>
+</div>
+
+<script>
+const products = {
+  "royal-necklace": {
+    title: "Royal Gold Necklace",
+    description: "22K handcrafted necklace with temple design.",
+    image: "images/necklace1.jpg"
+  },
+  "floral-ring": {
+    title: "Floral Gold Ring",
+    description: "Premium gold ring with diamond setting.",
+    image: "images/ring1.jpg"
+  }
+};
+
+// get product id from URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const product = products[id];
+
+// show data
+if (product) {
+  document.getElementById("product-title").innerText = product.title;
+  document.getElementById("product-description").innerText = product.description;
+  document.getElementById("product-image").src = product.image;
+} else {
+  document.body.innerHTML = "<h2>Product not found!</h2>";
+}
+</script>
+<script>
+const products = [
+  {
+    id: 1,
+    name: "Royal Gold Necklace",
+    image: "images/necklace1.jpg",
+    description: "22K handcrafted gold necklace, perfect for royal occasions."
+  },
+  {
+    id: 2,
+    name: "Elegant Gold Earrings",
+    image: "images/earrings1.jpg",
+    description: "Traditional drop earrings with premium design."
+  },
+  {
+    id: 3,
+    name: "Floral Gold Ring",
+    image: "images/ring1.jpg",
+    description: "Beautifully crafted floral ring for special moments."
+  },
+  {
+    id: 4,
+    name: "Classic Gold Bangles",
+    image: "images/bangles1.jpg",
+    description: "Elegant gold bangles with intricate engraving."
+  }
+];
+
+// Get the product ID from the URL
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get("id"));
+const product = products.find(p => p.id === id);
+
+if (product) {
+  document.body.innerHTML = `
+    <div class="product-details">
+      <img src="${product.image}" alt="${product.name}">
+      <h1>${product.name}</h1>
+      <p>${product.description}</p>
+      <button>Buy Now</button>
+    </div>
+  `;
+} else {
+  document.body.innerHTML = "<h1>Product not found!</h1>";
+}
+</script>
+
+</body>
+</html>

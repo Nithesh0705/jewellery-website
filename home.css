@@ -1,0 +1,40 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  background-color: gold;
+  padding: 10px;
+  margin: 0;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.shop-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: gold;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+  <div class="container">
+    <div id="product-details" class="product-details"></div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get("id"));
+    const product = products.find(p => p.id === productId);
+    const container = document.getElementById("product-details");
+
+    if (product) {
+      container.innerHTML = `
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.name}" class="product-img">
+          <div class="product-info">
+            <h2>${product.name}</h2>
+            <label>Weight (grams): <input type="number" value="10" id="weightInput"></label>
+            <p><strong>Price:</strong> ₹${product.price}</p>
+            <p><strong>Discount Price:</strong> ₹${product.discountPrice}</p>
+            <p><strong>GST (3%):</strong> ₹${Math.round(product.discountPrice * 0.03)}</p>
+            <p><strong>Total Payable:</strong> ₹${Math.round(product.discountPrice * 1.03)}</p>
+            <p><strong>Description:</strong> ${product.description}</p>
+            <button class="btn">Add to Cart</button>
+          </div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `<p class="not-found">Product not found!</p>`;
+    }
+  </script>
+</body>
+</html>
