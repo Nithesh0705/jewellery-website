@@ -1,0 +1,140 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f0;
+  color: #333;
+}
+header .logo {
+  font-size: 22px;
+  font-weight:bolder;
+  color:black;
+    font-family:serif;
+}
+.logo img{
+    width:100px;
+    float: right;
+    padding-left:20%;
+    padding-top: 30px;
+}
+.logo h2{
+    float:left;
+    color:#F5F5F5;
+}
+header {
+  width:100%;
+    HEIGHT:AUTO;
+    border-radius: 15PX;
+  justify-content: space-between;
+  align-items: center;
+    margin-bottom: 20px;
+  background: #D2B48C; /* Gold color */
+  padding: 0px;
+    padding-bottom: 10px;
+  position:sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-left: 25%;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: black;
+}
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #d4af37;
+    width: 200px;
+    border-radius: 5px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    text-align: right;
+  }
+
+  header nav ul li {
+    margin: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header nav.active {
+    display: block;
+  }
+}
+
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+}
+
+section {
+  padding: 30px;
+  border-bottom: 1px solid #e0cfcf;
+}
+
+h2 {
+  color: #b85c5c;
+    padding-top: 50px;
+}
+
+.highlight {
+  background-color: #fbe3d3;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #D2B48C;
+  color: white;
+    margin-top: 20px;
+    margin-top: 20px;
+  text-align: center;
+  padding: 15px;
+}
